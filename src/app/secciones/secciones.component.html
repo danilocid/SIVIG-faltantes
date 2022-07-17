@@ -1,0 +1,32 @@
+<div class="container pt-4">
+  <div class="card col-lg-10 offset-lg-1">
+    <h3 class="card-header">Secciones</h3>
+
+    <div class="card-body">
+      <table
+        datatable
+        [dtOptions]="dtOptions"
+        class="table table-striped hover"
+      >
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Seccion</th>
+            <th>Faltantes</th>
+            <th>Finalizados</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let seccion of secciones">
+            <td>{{ seccion.id }}</td>
+            <td>{{ seccion.nombre }}</td>
+            <td>{{ seccion.faltantes }}</td>
+            <td>{{ seccion.finalizados }}</td>
+            <td>{{ seccion.finalizados + seccion.faltantes }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
